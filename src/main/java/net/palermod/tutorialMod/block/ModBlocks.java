@@ -1,8 +1,11 @@
 package net.palermod.tutorialMod.block;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.LightBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -11,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.palermod.tutorialMod.TutorialMod;
+import net.palermod.tutorialMod.block.custom.MagicBlock;
 import net.palermod.tutorialMod.item.ModItems;
 
 import java.util.function.Supplier;
@@ -34,7 +38,26 @@ public class ModBlocks {
                     .sound(SoundType.AMETHYST)
             ));
 
+    public static final RegistryObject<Block> ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
+            ()-> new DropExperienceBlock(UniformInt.of(2,4),BlockBehaviour.Properties.of()
+                    .strength(4F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+            ));
 
+    public static final RegistryObject<Block> ALEXANDRITE_DEEPSLATE_ORE = registerBlock("alexandrite_deepslate_ore",
+            ()-> new DropExperienceBlock(UniformInt.of(3,6),BlockBehaviour.Properties.of()
+                    .strength(5F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE)
+            ));
+
+    public static final RegistryObject<Block> TRANSFORMER = registerBlock("transformer",
+                ()-> new MagicBlock(BlockBehaviour.Properties.of()
+                        .strength(2F)
+                        .requiresCorrectToolForDrops()
+                        .sound(SoundType.STONE)
+                ));
 
 
 
