@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "minecraft:wheat",
+    "A": "minecraft:wheat",
     "X": "minecraft:cocoa_beans"
   },
   "pattern": [
-    "###",
-    "#X#",
-    "###"
+    "AAA",
+    "AXA",
+    "AAA"
   ],
   "result": {
     "count": 8,
